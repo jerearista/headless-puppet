@@ -25,7 +25,7 @@ class hostname ($hostname='default') {
   }
 
   exec { "set-host-name":
-    command => "/bin/hostname hostname $hostname || test `hostname` -ne $hostname",
+    command => "/bin/hostname hostname $hostname || /usr/bin/test `hostname` -ne $hostname",
   }
 
 }
